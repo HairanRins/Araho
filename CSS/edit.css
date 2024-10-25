@@ -1,0 +1,82 @@
+/* Container for the entire form */
+#profil .container {
+    max-width: 600px;
+    border-top: 5px solid #3c91e6;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#profil .container h1 {
+    color: #285786;
+    margin-bottom: 20px;
+}
+/* Margin and label styles for each form group */
+#profil .form-group {
+    margin-bottom: 15px;
+}
+#profil .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #342e37;
+}
+
+/* Input field styles */
+#profil .form-group input[type="text"],
+#profil .form-group input[type="email"],
+#profil .form-group input[type="password"],
+#profil .form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Submit button styles */
+#profil .form-group button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3c91e6;
+    color: #fff;
+    cursor: pointer;
+}
+#profil .form-group button:hover {
+    background-color: #285786;
+}
+
+/* Styles for the profile image and pen icon */
+.profile-image-container {
+    position: relative;
+    display: inline-block;
+    margin: auto;
+}
+.profile-image {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.profile-image-input {
+    display: none;
+}
+.profile-image-container  .profile-image-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #3c91e6;
+    color: #fff;
+    padding: 3px 5px 3px 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.profile-image-icon i {
+    font-size: 15px;
+    color: #fff;
+}
+#img_form {
+    text-align: center;
+}

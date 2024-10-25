@@ -1,0 +1,185 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#addTaskBtn , #addGoalBtn , #completedGoalsBtn , #ajoutTaskBtn , #modifiedTasksBtn {
+    border: none;
+    color: #fff;
+    background-image: linear-gradient(30deg, #0004ff, #4ce3f7);
+    border-radius: 20px;
+    background-size: 100% auto;
+    font-family: inherit;
+    font-size: 1.01rem;
+    padding: 7px 15px;
+    cursor: pointer;
+}
+#addTaskBtn {
+    margin-left: 30px;
+}
+#addTaskBtn:hover ,  #addGoalBtn:hover , #completedGoalsBtn:hover , #ajoutTaskBtn:hover , #modifiedTasksBtn:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;
+}
+@keyframes pulse512 {
+    0% {
+     box-shadow: 0 0 0 0 #05bada66;
+    }
+   
+    70% {
+     box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+    }
+   
+    100% {
+     box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+    }
+   }
+.summary {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* button {
+    margin-top: 20px;
+    display: block;
+} */
+
+/* form {
+    margin-top: 20px;
+} */
+table {
+    /* width: 100%; */
+    width: 95%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table {
+    background: #fff;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background: #3c91e6;
+    color: #fff;
+    border-color: #3c91e6;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Styles pour les petits écrans */
+@media screen and (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+    table {
+        background: #fff;
+    }
+    
+    /* Cacher les en-têtes de tableau */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+  
+    tr {
+      margin: 0 0 1rem 0;
+    }
+  
+    /* tr:nth-child(odd) {
+      background: #f2f2f2;
+    } */
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    td {
+      /* Comportement en bloc pour les cellules */
+      border: none;
+      position: relative;
+      padding-left: 50%;
+      white-space: normal;
+      text-align: left;
+    }
+  
+    td:before {
+      /* Style pour les "pseudo-cellules" */
+      position: absolute;
+      top: 0;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      text-align: left;
+      font-weight: bold;
+      height: 100%;
+      background: #3c91e6;
+      color: #fff;
+      border-color: #3c91e6;
+    }
+  
+    /* Contenu des "pseudo-cellules" basé sur les en-têtes de tableau */
+    td:nth-of-type(1):before { content: "Numéro"; }
+    td:nth-of-type(2):before { content: "Status"; }
+    td:nth-of-type(3):before { content: "Priorité"; }
+    td:nth-of-type(4):before { content: "Nom"; }
+    td:nth-of-type(5):before { content: "Description"; }
+    td:nth-of-type(6):before { content: "Échéance"; }
+    td:nth-of-type(7):before { content: "Action"; }
+}
+
+  
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.editBtn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: none;
+}
+
+#tasksContainer input {
+    
+    width: 100%;
+    padding: 7px;
+}

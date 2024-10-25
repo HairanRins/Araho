@@ -1,0 +1,377 @@
+
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flex1 {
+    display: flex;
+    align-items: center;
+}
+@mixin flex2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+@mixin flex4 {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+@mixin header {
+    transition: all .50s ease;
+    position: relative;
+    background: rgba(189, 206, 214, 0.075);
+    height: 80px;
+    margin-bottom: 0.3%;
+}
+@mixin logo_img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 7px;
+}
+@mixin anim_before {
+    transform: scaleX(0);
+    transition: transform .5s ease-in-out;
+    transform-origin: right;
+}
+@mixin responsive {
+    @media (max-width: 992px) {
+        .nav , 
+        .nav .toggle_btn {
+            display: none;
+        }
+        header .dropdown_menu {
+           display: block; 
+        }
+        .inter .toggle_btn {
+            display: block;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .container .content {
+            width: 100%;
+        }
+        .container .illustr {
+            width: 100%;
+            /* margin-left: 5rem; */
+        }
+        .illustr img {
+            width: 400px;
+        }
+    }
+    @media (max-width:1024px) {
+        .container .content {
+            width: 80%;
+            padding-left: 10%;
+            padding-right: 10%;
+            margin-top: 10%;
+        }
+        main .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10%;
+        }
+        .container .illustr {
+            width: 100%;
+        }
+        .container .illustr , .outils .img_illus {
+            text-align: center;
+        }
+        .container .illustr  img , .outils .img_illus img{
+            display: block;
+            margin: 0 auto;
+        }
+        .about_container .about_image img , .outils .img_illus img {
+            width: 70%;
+            object-fit: cover;
+            display: block;
+            margin: auto;
+        }
+        .outils .princip {
+            width: 80%;
+            margin-top: 5%;
+        }
+        .contact_section .contact-info , .contact_section .contact-explanation{
+            width: 100%;
+        }
+        .contact_section .contact-explanation {
+            margin-top: 25px;
+        }
+        .contact_section .citation {
+            width: 100%;
+        }
+        .contact_section .citation h4 {
+            text-align: center;
+        }
+        footer {
+            gap: 2rem;
+        }
+        footer .footer-section {
+            width: 80%;
+            margin: auto;
+        }
+        .footer-section #signup-form input {
+            width: 80%;
+        }
+    }
+    @media (max-width: 768px) {
+        .container .content {
+            width: 100%;
+            padding-left: 15%;
+            padding-right: 15%;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container .illustr {
+            width: 100%;
+        }
+    }
+    @media (max-width:576px) {
+        .container .content {
+            width: 100%;
+            padding-left: 5%;
+            padding-right: 5%;
+            margin-top: 10%;
+            margin-bottom: 5%;
+        }
+        .container .illustr {
+            width: 100%;
+            display: none;
+        }
+        .illustr img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    @media (max-width:435px) {
+        .title .animated_title {
+            font-size: 25px;
+        }
+        #emailForm input{
+            margin-bottom: 10px;
+        }
+    }
+}
+@mixin button {
+    border: none;
+    color: #fff;
+    background-image: linear-gradient(30deg, #0004ff, #4ce3f7);
+    border-radius: 20px;
+    background-size: 100% auto;
+    font-family: inherit;
+    font-size: 1.01rem;
+    padding: 7px 15px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none; /* To remove underline */
+}
+@mixin anim_button {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;
+    @keyframes pulse512 {
+        0% {
+            box-shadow: 0 0 0 0 #05bada66;
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+        }
+    }
+}
+@mixin anim_title {
+    font-size: 2.3rem;
+    letter-spacing: 1.5px;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+    @keyframes blink {
+        50% { border-color: transparent; }
+    }
+}
+@mixin carousel {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+}
+@mixin dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: $black2;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+@mixin section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 350px;
+    position: relative;
+    top: 0;
+    z-index: 0;
+    overflow: hidden;
+    /* background: linear-gradient(to bottom, #c3e6ec, #a7d1d9); */
+    cursor: pointer;
+}
+@mixin before_section {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: linear-gradient(135deg, #364a60, #384c6c);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.35s ease-out;
+}
+@mixin icon {
+    background-color: $blue;
+    border-radius: 50%;
+    color: white;
+    font-size: 40px;
+    height: 80px;
+    line-height: 80px;
+    margin-bottom: 10px;
+    width: 80px;
+    display: inline-block;
+}
+@mixin outils {
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+@mixin princip {
+    width: 35%;
+    overflow: hidden;
+}
+@mixin media {
+    display: inline-block;
+    color: $blue3;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 2px;
+}
+@mixin form_contact {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+@mixin contact_form {
+    background-color: $white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    position: relative;
+}
+@mixin close-form {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 25px;
+}
+@mixin form_input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+@mixin button1 {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3482ba;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+@mixin citation {
+    background-color: rgba(189, 206, 214, 0.144);
+    width: 100%;
+    margin-bottom: -30px;
+}
+@mixin citation_title {
+    margin: auto;
+    padding: 20px;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    width: 60%;
+    text-align: center;
+    color: #3482ba;
+}
+@mixin footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #173951;
+    color: #fff;
+    padding: 50px;
+}
+@mixin signup {
+    padding: 10px;
+    margin-top: 17px;
+    width: 100px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #3482ba; /* Ajoutez un fond coloré pour ressembler à un bouton */
+    text-align: center; /* Centrer le texte */
+}
+@mixin social_media {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
